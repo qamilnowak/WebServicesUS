@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://serwis1.us.kie.ue.poznan.pl" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://serwis1.us.kie.ue.poznan.pl" xmlns:intf="http://serwis1.us.kie.ue.poznan.pl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://serwis1.us.kie.ue.poznan.pl" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="utworzVcard">
+    <complexType>
+     <sequence>
+      <element name="o" type="impl:Osoba"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="Osoba">
+    <sequence>
+     <element name="nazwisko" nillable="true" type="xsd:string"/>
+     <element name="imie" nillable="true" type="xsd:string"/>
+     <element name="nrTelefonu" nillable="true" type="xsd:string"/>
+     <element name="email" nillable="true" type="xsd:string"/>
+     <element name="nrIndeksu" type="xsd:int"/>
+    </sequence>
+   </complexType>
+   <element name="utworzVcardResponse">
+    <complexType>
+     <sequence>
+      <element name="utworzVcardReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getQRcodeAsBytes">
+    <complexType>
+     <sequence>
+      <element name="napis" type="xsd:string"/>
+      <element name="wysokosc" type="xsd:int"/>
+      <element name="szerokosc" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getQRcodeAsBytesResponse">
+    <complexType>
+     <sequence>
+      <element name="getQRcodeAsBytesReturn" type="xsd:base64Binary"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="helloName">
+    <complexType>
+     <sequence>
+      <element name="input" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="helloNameResponse">
+    <complexType>
+     <sequence>
+      <element name="helloNameReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="get128BarcodeAsBytes">
+    <complexType>
+     <sequence>
+      <element name="napis" type="xsd:string"/>
+      <element name="rozdzielczosc" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="get128BarcodeAsBytesResponse">
+    <complexType>
+     <sequence>
+      <element name="get128BarcodeAsBytesReturn" type="xsd:base64Binary"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="get128BarcodeAsBytesResponse">
+
+      <wsdl:part element="impl:get128BarcodeAsBytesResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getQRcodeAsBytesRequest">
+
+      <wsdl:part element="impl:getQRcodeAsBytes" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="utworzVcardResponse">
+
+      <wsdl:part element="impl:utworzVcardResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="utworzVcardRequest">
+
+      <wsdl:part element="impl:utworzVcard" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="helloNameResponse">
+
+      <wsdl:part element="impl:helloNameResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="helloNameRequest">
+
+      <wsdl:part element="impl:helloName" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getQRcodeAsBytesResponse">
+
+      <wsdl:part element="impl:getQRcodeAsBytesResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="get128BarcodeAsBytesRequest">
+
+      <wsdl:part element="impl:get128BarcodeAsBytes" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="WebSerwisik">
+
+      <wsdl:operation name="utworzVcard">
+
+         <wsdl:input message="impl:utworzVcardRequest" name="utworzVcardRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:utworzVcardResponse" name="utworzVcardResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getQRcodeAsBytes">
+
+         <wsdl:input message="impl:getQRcodeAsBytesRequest" name="getQRcodeAsBytesRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getQRcodeAsBytesResponse" name="getQRcodeAsBytesResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="helloName">
+
+         <wsdl:input message="impl:helloNameRequest" name="helloNameRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:helloNameResponse" name="helloNameResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="get128BarcodeAsBytes">
+
+         <wsdl:input message="impl:get128BarcodeAsBytesRequest" name="get128BarcodeAsBytesRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:get128BarcodeAsBytesResponse" name="get128BarcodeAsBytesResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="WebSerwisikSoapBinding" type="impl:WebSerwisik">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="utworzVcard">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="utworzVcardRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="utworzVcardResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getQRcodeAsBytes">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getQRcodeAsBytesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getQRcodeAsBytesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="helloName">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="helloNameRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="helloNameResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="get128BarcodeAsBytes">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="get128BarcodeAsBytesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="get128BarcodeAsBytesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="WebSerwisikService">
+
+      <wsdl:port binding="impl:WebSerwisikSoapBinding" name="WebSerwisik">
+
+         <wsdlsoap:address location="http://150.254.36.97:8080/WebSerwisy8/services/WebSerwisik"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
