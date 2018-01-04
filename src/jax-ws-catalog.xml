@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <system systemId="http://150.254.36.97:8080/WebSerwisy8/services/WebSerwisik?wsdl" uri="wsdl/150.254.36.97_8080/WebSerwisy8/services/WebSerwisik.wsdl"/>
+    <system systemId="http://www.webservicex.net/geoipservice.asmx?WSDL" uri="wsdl/www.webservicex.net/geoipservice.asmx.wsdl"/>
 </catalog>

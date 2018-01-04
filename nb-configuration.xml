@@ -14,5 +14,6 @@ That way multiple projects can share the same settings (useful for formatting ru
 Any value defined here will override the pom.xml file value but is only applicable to the current project.
 -->
         <org-netbeans-modules-maven-jaxws._5f_C_5f_WebSerwisik>http://150.254.36.97:8080/WebSerwisy8/services/WebSerwisik?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_WebSerwisik>
+        <org-netbeans-modules-maven-jaxws._5f_C_5f_geoipservice_2e_asmx>http://www.webservicex.net/geoipservice.asmx?WSDL</org-netbeans-modules-maven-jaxws._5f_C_5f_geoipservice_2e_asmx>
     </properties>
 </project-shared-configuration>
